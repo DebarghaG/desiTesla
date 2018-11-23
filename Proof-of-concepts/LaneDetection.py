@@ -1,5 +1,5 @@
 def draw_lane_lines(image):
-imshape = image.shape
+    imshape = image.shape
 
     # Greyscale image
     greyscaled_image = grayscale(image)
