@@ -5,12 +5,12 @@ def Direction()
     right = GPIO.input(22):
     forward = GPIO.input(23):
 
-    if(left== True && right== False && foward==True)
+    if(left== True and right== False and foward==True)
         direction = 'FL'
-    if(left== False && right== True && foward==True)
+    if(left== False and right== True and foward==True)
         direction = 'FR'
-    if(left== False && right== False && foward==True)
+    if(left== False and right== False and foward==True)
         direction = 'FF'
-    if(left== False && right== False && foward==False)
+    if(left== False and right== False and foward==False)
         direction = 'NN'
     return direction
