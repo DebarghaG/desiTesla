@@ -22,12 +22,6 @@ def forward(x):
     time.sleep(x)
     GPIO.output(Forward, GPIO.LOW)
 
-def reverse(x):
-    GPIO.output(Backward, GPIO.HIGH)
-    print("Moving Backward")
-    time.sleep(x)
-    GPIO.output(Backward, GPIO.LOW)
-
 def right(x):
     GPIO.output(Forward, GPIO.HIGH)
     GPIO.output(Right, GPIO.HIGH)
