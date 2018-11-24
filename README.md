@@ -1,14 +1,14 @@
-#Setup guide
+# Setup guide
 
-##Control
-###Camera.py
+## Control
+### Camera.py
 
-###Move.py
+### Move.py
 
 
-##Tests :
-###Camera.py
+## Tests :
+### Camera.py
 To check the functionality of the Camera module.
 
-###Move.py
+### Move.py
 To check the basic motor movemement for the car.
