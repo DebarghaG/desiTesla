@@ -38,10 +38,18 @@ def right(x):
 
 def left(x):
     GPIO.output(Forward, GPIO.HIGH)
-    GPIO.output(Low, GPIO.HIGH)
+    GPIO.output(Left, GPIO.HIGH)
     print("Moving Left")
     time.sleep(x)
     GPIO.output(Forward, GPIO.LOW)
-    GPIO.output(Low, GPIO.LOW)
+    GPIO.output(Left, GPIO.LOW)
+
+def stop(x):
+    GPIO.output(Forward, GPIO.LOW)
+    GPIO.output(Left, GPIO.LOW)
+    print("Coming to a stop.")
+    time.sleep(x)
+    GPIO.output(Forward, GPIO.LOW)
+    GPIO.output(Left, GPIO.LOW)
 
 GPIO.cleanup()
