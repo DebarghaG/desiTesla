@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 #Checking if the camera can capture images
 
 import picamera
