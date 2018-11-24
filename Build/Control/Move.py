@@ -1,3 +1,9 @@
+"""
+Utility library to create move in any directionself.
+
+Call Move.direction(x) from the CarBrain to control the movement of the carself.
+"""
+
 import sys
 import time
 import RPi.GPIO as GPIO
