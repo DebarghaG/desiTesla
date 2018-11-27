@@ -21,6 +21,8 @@ sleeptime=1
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(Forward, GPIO.OUT)
 GPIO.setup(Backward, GPIO.OUT)
+GPIO.setup(Right, GPIO.OUT)
+GPIO.setup(Left, GPIO.OUT)
 
 def forward(x):
     GPIO.output(Forward, GPIO.HIGH)
