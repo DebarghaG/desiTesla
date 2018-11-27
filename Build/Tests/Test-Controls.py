@@ -3,18 +3,19 @@ import time
 import RPi.GPIO as GPIO
 
 mode=GPIO.getmode()
-GPIO.cleanup()
 
-Forward=26
-Backward=20
-Right = 25
-Left = 19
+Forward=13
+Backward=12
+Right = 24
+Left = 23
 
 sleeptime=1
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(Forward, GPIO.OUT)
 GPIO.setup(Backward, GPIO.OUT)
+GPIO.setup(Right, GPIO.OUT)
+GPIO.setup(Left, GPIO.OUT)
 
 def forward(x):
     GPIO.output(Forward, GPIO.HIGH)
@@ -38,15 +39,15 @@ def right(x):
 
 def left(x):
     GPIO.output(Forward, GPIO.HIGH)
-    GPIO.output(Low, GPIO.HIGH)
+    GPIO.output(Left, GPIO.HIGH)
     print("Moving Left")
     time.sleep(x)
     GPIO.output(Forward, GPIO.LOW)
-    GPIO.output(Low, GPIO.LOW)
+    GPIO.output(Left, GPIO.LOW)
 
-while (1):
-    forward(5)
-    reverse(5)
-    left(10)
-    right(10)
-    GPIO.cleanup()
+forward(5)
+reverse(5)
+left(10)
+right(10)
+GPIO.cleanup()
+	
