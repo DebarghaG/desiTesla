@@ -45,9 +45,10 @@ def left(x):
     GPIO.output(Forward, GPIO.LOW)
     GPIO.output(Left, GPIO.LOW)
 
+start_time = time.clock()
 forward(5)
 reverse(5)
 left(10)
 right(10)
+print time.clock() - start_time, "seconds"
 GPIO.cleanup()
-	
