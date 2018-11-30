@@ -1,19 +1,19 @@
 """
 We're creating a hardware short to interface the signals from the Blynk app to the brain of the car.
 
-Pin 24 --> Left --> Shorted with Pin 21
-Pin 25 --> Right --> Shorted with Pin 22
-Pin 26 --> Forward --> Shorted with Pin 23.
+Pin 23 --> Left --> Shorted with Pin 38
+Pin 24 --> Right --> Shorted with Pin 37
+Pin 13 --> Forward --> Shorted with Pin 15
 
-By reading the state of the pins, the car brain can understand how the user is controlling the car. 
+By reading the state of the pins, the car brain can understand how the user is controlling the car.
 """
 
 import RPi.GPIO as GPIO
 
 def Direction():
-    left = GPIO.input(21)
-    right = GPIO.input(22)
-    forward = GPIO.input(23)
+    left = GPIO.input(38)
+    right = GPIO.input(37)
+    forward = GPIO.input(15)
 
     if(left== True and right== False and foward==True):
         direction = 'FL'

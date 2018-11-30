@@ -1,7 +1,7 @@
 import sys
 import time
 import RPi.GPIO as GPIO
-from gpiozero import PWMOutputDevice
+from gpiozero import OutputDevice
 
 #mode=GPIO.getmode()
 

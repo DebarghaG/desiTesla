@@ -15,9 +15,9 @@ def CaptureForTraining():
     #120,000 ms total runtime ( 2 minutes for training)
     #480 images, with names stamped with both the timestamp and the direction of the car.
     while(i<120000):
-        #dir = Direction()
+        dir = Direction()
         start_time = time.clock()
-        camera.capture("""dir+ """ "%s"  %i + ".jpg", resize=(640, 480))
+        camera.capture("%s" %dir +  "%s"  %i + ".jpg", resize=(640, 480))
         #camera.capture(dir + ".jpg", resize=(640, 480))
         i+=250
         #Sleeping for 250ms
