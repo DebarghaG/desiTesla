@@ -3,7 +3,7 @@ We're creating a hardware short to interface the signals from the Blynk app to t
 
 Pin 23 --> Left --> Shorted with Pin 38
 Pin 24 --> Right --> Shorted with Pin 37
-Pin 13 --> Forward --> Shorted with Pin 15
+Pin 13 --> Forward --> Shorted with Pin 16
 
 By reading the state of the pins, the car brain can understand how the user is controlling the car.
 """
@@ -12,6 +12,10 @@ import RPi.GPIO as GPIO
 from gpiozero import Button
 
 def Direction():
+    """
+
+    Code using the GPIO library.
+
    # GPIO.setmode(GPIO.BOARD)
    # GPIO.setup(38, GPIO.IN)
    # GPIO.setup(37, GPIO.IN)
@@ -28,9 +32,19 @@ def Direction():
     #    direction = 'FF'
    # if(left== False and right== False and forward==False):
     #    direction = 'NN'
-	button = Button(16)
-	if button.is_pressed:
+    """
+
+	forwardbutton = Button(16)
+    leftbutton = Button(17)
+    rightbutton = Button(18)
+	if forwardbutton.is_pressed:
 		direction='FF'
-	else:
-		direction='NN'
+    elif leftbutton.is_pressed:
+        direction='FL'
+    elif rightbutton.is_pressed:
+        direction='FR'
+    else:
+        direction='NN'
+    leftbutton = Button()
+
 	return direction
