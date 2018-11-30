@@ -29,8 +29,8 @@ def Direction():
    # if(left== False and right== False and forward==False):
     #    direction = 'NN'
 	button = Button(16)
-	if button.is_pressed:
+	if(button.is_pressed() = True)
 		direction='FF'
-	else:
+	else()
 		direction='NN'
 	return direction

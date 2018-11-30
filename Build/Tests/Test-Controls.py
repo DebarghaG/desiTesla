@@ -7,8 +7,8 @@ from gpiozero import OutputDevice
 
 Forward=13
 Backward=12
-Right = 24
-Left = 23
+Right = 15
+Left = 16
 
 forward_motor = OutputDevice(Forward)
 backward_motor = OutputDevice(Backward)

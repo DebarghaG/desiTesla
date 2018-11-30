@@ -1,11 +1,12 @@
-    """
+"""
 This piece of code is meant to be run during the data collection phase .
 
 It captures images with the timestamp and the direction to label the files.
 """
+from time import sleep
 import time
 import picamera
-#from PinRead import Direction
+from PinRead import Direction
 import datetime as dt
 camera = picamera.PiCamera()
 
