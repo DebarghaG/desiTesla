@@ -34,17 +34,16 @@ def Direction():
     #    direction = 'NN'
     """
 
-	forwardbutton = Button(16)
-    leftbutton = Button(17)
-    rightbutton = Button(18)
-	if forwardbutton.is_pressed:
-		direction='FF'
+    forwardbutton = Button(13)
+    leftbutton = Button(24)
+    rightbutton = Button(26)
+    if forwardbutton.is_pressed:
+	direction='FF'
     elif leftbutton.is_pressed:
         direction='FL'
     elif rightbutton.is_pressed:
         direction='FR'
     else:
         direction='NN'
-    leftbutton = Button()
-
-	return direction
+    
+    return direction
