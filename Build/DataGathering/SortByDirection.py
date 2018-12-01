@@ -4,8 +4,8 @@ os.system("sh SortByDirection.sh")
 
 list1 = ["FF", "FR", "FL", "NN"]
 for i in range(len(list1)):
-	source1 = "/Users/prajwalseth/Desktop/Programming/Desi-Tesla/Build/DataGathering/" + list1[i]
-	dest11 = "/Users/prajwalseth/Desktop/Programming/Desi-Tesla/Build/DataGathering/test/" + list1[i]
+	source1 = "/home/pi/Desi-Tesla/Build/DataGathering/" + list1[i]
+	dest11 = "/home/pi/Desi-Tesla/Build/DataGathering/" + list1[i]
 	files = os.listdir(source1)
 	import shutil
 	import numpy as np

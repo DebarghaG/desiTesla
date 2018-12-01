@@ -1,5 +1,5 @@
 mkdir training
-mv FF /Users/prajwalseth/Desktop/Programming/Desi-Tesla/Build/DataGathering/training
-mv FL /Users/prajwalseth/Desktop/Programming/Desi-Tesla/Build/DataGathering/training
-mv FR /Users/prajwalseth/Desktop/Programming/Desi-Tesla/Build/DataGathering/training
-mv NN /Users/prajwalseth/Desktop/Programming/Desi-Tesla/Build/DataGathering/training
+mv FF /home/pi/Desi-Tesla/Build/DataGathering/training
+mv FL /home/pi/Desi-Tesla/Build/DataGathering/training
+mv FR /home/pi/Desi-Tesla/Build/DataGathering/training
+mv NN /home/pi/Desi-Tesla/Build/DataGathering/training
