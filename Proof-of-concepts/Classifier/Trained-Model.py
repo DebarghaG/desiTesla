@@ -1,38 +1,31 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Jun 20 13:09:22 2018
 
-@author: yatheen!
-"""
-
-# Step 1: Import the packages
+# Please make sure OpenCV, Numpy and Keras are satisfied as dependencies.
 from keras.models import model_from_json
 import cv2
 import numpy as np
 
-# Step 2: Load the Model from Json File
+#Loading the model from the JSON model.
 json_file = open('./model.json', 'r')
 loaded_model_json = json_file.read()
 json_file.close()
 loaded_model = model_from_json(loaded_model_json)
 
-# Step 3: Load the weights
+#Loading the model weights.
 loaded_model.load_weights("./model.h5")
-print("Loaded model from disk")
+print("Done loading the model...")
 
-# Step 4: Compile the model
+#Compiling the data from the weights.
 loaded_model.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
 
-# Step 5: load the image you want to test
+#Loading the image that needs to be tested and scaling down to a 50 by 50 pixel image.
 image = cv2.imread('/Users/prajwalseth/Downloads/all/train/a.0.jpg')
 image = cv2.resize(image, (50,50))
 image = image.reshape(1, 50, 50, 3)
 
-#print(image[:50]) 
-#cv2.imshow("Input Image", image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-# Step 6: Predict to which class your input image has been classified
+
+#Doing the prediction
 result = loaded_model.predict_classes(image)
 print(result)
 print (result[0][0])
