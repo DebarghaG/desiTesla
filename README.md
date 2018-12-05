@@ -42,3 +42,11 @@ To check the functionality of the Camera module.
 
 ### Move.py
 To check the basic motor movemement for the car.
+
+## Machine Learning on Cloud
+### Amazon Web Services API Gateway
+To make our car faster and cost effective, the complete machine learning algorithm is running on Cloud. The device sends an API request to our instance on cloud through a URL and API Key, referred to as the "startpoint"
+
+### Amazon Web Services Lambda
+On receiving the API startpoint, the request is then forwarded to the AWS Lambda, where an instantaneous instance is spinned to serve our python code. The python code runs and logs the data in AWS CloudWatch. The result is returned to the API Return Node. The API Return Node return node data is finally received by the user.
+
