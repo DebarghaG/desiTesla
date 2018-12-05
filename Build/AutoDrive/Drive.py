@@ -1,7 +1,13 @@
-from move import forward
-from move import right
-from move import left
-from move import stop
+import numpy as np
+import cv2
+import move
+import time
+import picamera
+import multiprocessing
+import datetime as dt
+
+camera = picamera.PiCamera()
+start_time=time.clock()
 
 """
 To be written :
@@ -12,5 +18,14 @@ To be written :
 -- Drive is logged.
 
 --Tertiary control is added : Haar cascade classifiers for object detection and
-ultrasonic sensor based driving interrupts 
+ultrasonic sensor based driving interrupts
 """
+
+def CaptureImage():
+    camera.capture("%s" %time.clock() + "jpg", resize=(150,150))
+    sleep(0.2)
+    print "Image captured on this process."
+
+def Predict():
+    result = loaded_model.predict_classes(image)
+    print(result)
