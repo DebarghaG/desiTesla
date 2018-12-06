@@ -28,4 +28,14 @@ def CaptureImage():
 
 def Predict():
     result = loaded_model.predict_classes(image)
-    print(result)
+    if result='FF':
+        forward(5)
+    elif result="FL"
+        left(5)
+    elif result='FR'
+        right(5)
+
+def Move()
+    """
+    Moves the vehicle according to what's required
+    """
