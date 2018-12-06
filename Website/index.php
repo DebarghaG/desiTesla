@@ -154,42 +154,42 @@ $brand = "SteerX";
                 <div class="col-md-4 wow animate fadeInUp">
                     <div class="service_single">
                         <img src="img/icon/do1.png" alt=""/>
-                        <h4>ui & ux Design</h4>
+                        <h4>Sophisticated Technology</h4>
                         <p>The incredibly complicated technology behind self-driving cars lets the on board computer make hundreds of calculations a second. These include how far you are from objects, current speed, behaviour of other cars, and location on the globe.</p>
                     </div><!--/.service_single-->
                 </div>
                 <div class="col-md-4  wow animate fadeInUp" data-wow-delay="0.1s">
                     <div class="service_single">
                         <img src="img/icon/do2.png" alt=""/>
-                        <h4>Prototype Design</h4>
+                        <h4>Fuel Savings</h4>
                         <p>Autonomous vehicles are, to all intents and purposes, software on wheels. The technology involved in a driverless car of the future will be such that each vehicle can be optimized to ensure fuel consumption is as efficient as possible.</p>
                     </div><!--/.service_single-->
                 </div>
                 <div class="col-md-4  wow animate fadeInUp" data-wow-delay="0.2s">
                     <div class="service_single">
                         <img src="img/icon/do3.png" alt=""/>
-                        <h4>Website Design</h4>
+                        <h4>No More Drunk Driving</h4>
                         <p>With the potential for human error removed, self-driving cars will reduce instances of accidents caused by driver error, drunk driving or distracted drivers.</p>
                     </div><!--/.service_single-->
                 </div>
                 <div class="col-md-4 wow animate fadeInUp">
                     <div class="service_single">
                         <img src="img/icon/do4.png" alt=""/>
-                        <h4>Brand Development</h4>
+                        <h4>Save Your Time</h4>
                         <p>With humans no longer involved in driving, commuters are likely to save up to an hour every day – time that will undoubtedly have many spin-off benefits from wellbeing to boosting the economy.</p>
                     </div><!--/.service_single-->
                 </div>
                 <div class="col-md-4 wow animate fadeInUp" data-wow-delay="0.1s">
                     <div class="service_single">
                         <img src="img/icon/do5.png" alt=""/>
-                        <h4>Vertual Assistant</h4>
+                        <h4>Smart Algorithms</h4>
                         <p>With driverless cars able to access up-to-the-minute data to help monitor traffic, as well as digital maps and other tools, they will be able to determine the fastest, most efficient route possible.</p>
                     </div><!--/.service_single-->
                 </div>
                 <div class="col-md-4 wow animate fadeInUp" data-wow-delay="0.2s">
                     <div class="service_single">
                         <img src="img/icon/do6.png" alt=""/>
-                        <h4>Software Development</h4>
+                        <h4>Influence Infrastecture</h4>
                         <p>Driverless cars will play a key role in the future of smart cities, and they will even impact the way city infrastructure is designed and built.</p>
                     </div><!--/.service_single-->
                 </div>
