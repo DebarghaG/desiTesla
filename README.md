@@ -1,32 +1,41 @@
 # Setup guide
 
-## Other Documentation 
-1 - Collecting Data
+##User File Manual :
+AutoDrive Engine :
+Drive.py : Main python script to be able to execute all the necessary functionalities.
+Move.py : Contains the functions that allow the car to be able to drive, is used as an utility script.
+Prediction.py : Contains the code that makes the prediction from the saved model, for a given image captured at a certain point in the path.
 
-The training round will go about for two minutes in which the camera attached will take in images in resolution - 640 X 480. Considering 250ms are taken to capture one image, about 480 images will be taken in the training time. 
+Car Brain :
+MultiClass-CNN-Train.py : Training script for the convolutional neural network to create a model from the training images and their relevant classifications. This model is then saved in JSON format, which can be used for prediction by the AutoDrive Engine.
 
-In the training round the car will be trained wirelessly using the Blynk app. At the same time the data in GPIO pins will be read using two pin combinations. Which are - 
-FF - Move Straight Forward
-FL - Move Left Forward
-FR - Move Right Forward
-NN - No Movement
+Data Gathering :
+DataCollection.py : Collects images with the associated direction steering angle with a delay of 0.25 seconds.
+Namecut.sh : Shell script to cut the label out of the name for the test data for the model.
+PinRead.py : Helper Python script that reads the direction of the steering by monitoring signals being transmitted through memory mapped I/O. ( They’re shorted with each other )
+SortByDirection.py : Python script to split the data 70:30 and put into the required directory structure.
+SortByDirection.sh : Shell script to generally split the images in a 70:30 ratio.
+SplitFolders.sh : Shell script to be able to split the data into 70:30 ratio, by the label into training and test data.
 
-Here we will get both images and decisions to be taken when similar situation is encountered. 
+Datasets:
+'4 Dec - Ignore' :
+'Clean Data'
+'Clean Data - FL'
+'Clean Data - NN'
+'5 Dec FR - Ignore'
+'Clean Data - FF'
+'Clean Data - FR'
 
-2 - Data Processing 
+Proof Of Concepts
+Cascade Classifier : Proof of Concept that a Haar-Cascade classifier that detects stop lights and traffic lights. ( XML pre-trained (1))
+Direction Classifier : Proof of concept that a CNN can be used to predict steering directions for a given image.
+Image Processing : Proof of Concept : applies a range of image processing methods to the images to be able to better extract meaningful information from it.
 
-The images thus collected will be now thresholded and then preprocessed to make the image data ready for Neural Networks. The dataset will be now divided into two parts. 70% of the dataset will go to the Training set and the remaining 30% will go to the Test set. 
-
-3 - Learning 
-
-Now the data in Training set will be sent to the neural network which will analyze the image data by either 2 layer deep ANN or 3 layer deep CNN and the decisions taken per image during the training. Now, the neural network learning from the dataset provided will produce labels (FF,FR,FL or NN) as per image. 
-
-Now, the so obtained labels will be compared with the test set to calculate the percentage error.
+Tests
+Test-Camera.py : Diagnostic script to check if the website is working.
+Test-Controls.py : Diagnostic script to make sure all the motors are working and up to scratch.
 
 
-Live -
-
-Now, during this phase the camera will take in live images, make a decision at real time and then send the data to the hardware. The image taken by the camera will be first Thresholded and Preprocessed and then will be sent to our model which will analyze the images in real time and create a label (FF, FR,FL or NN). The instruction will be sent to the hardware making the car move. 
 
 
 
@@ -49,4 +58,3 @@ To make our car faster and cost effective, the complete machine learning algorit
 
 ### Amazon Web Services Lambda
 On receiving the API startpoint, the request is then forwarded to the AWS Lambda, where an instantaneous instance is spinned to serve our python code. The python code runs and logs the data in AWS CloudWatch. The result is returned to the API Return Node. The API Return Node return node data is finally received by the user.
-
