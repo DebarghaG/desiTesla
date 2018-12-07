@@ -30,10 +30,3 @@ for filename in os.listdir(directory):
 	# Step 6: Predict to which class your input image has been classified
 	result = loaded_model.predict_classes(image)
 	print(result)
-
-	"""
-	if(result[0][0] == 1):
-		print("I guess this must be a Dog!")
-	else:
-		print("I guess this must be a Cat!")
-	"""
