@@ -5,18 +5,17 @@ import numpy as np
 import os
 
 def setup():
-	# Step 2: Load the Model from Json File
 	json_file = open('./model.json', 'r')
 	loaded_model_json = json_file.read()
 	json_file.close()
 	loaded_model = model_from_json(loaded_model_json)
 
-	# Step 3: Load the weights
 	loaded_model.load_weights("./model.h5")
 	print("Loaded model from disk")
 
-	# Step 4: Compile the model
 	loaded_model.compile(optimizer = 'adam', loss = 'sparse_categorical_crossentropy', metrics= ['accuracy'])
+
+setup()
 
 def predict(image):
 	"""directory = '/Users/prajwalseth/Desktop/Programming/CNN/all3/test/'
