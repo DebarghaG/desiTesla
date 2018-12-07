@@ -1,12 +1,12 @@
 import cv2
 import numpy as np
 
-img = cv2.imread('/home/debargha/Documents/Desi Tesla/Proof-of-concepts/Image Processing/FR16500.jpg')
-cv2.imshow('Original image',img)
+img = cv2.imread('/home/debargha/Documents/Desi Tesla/Proof-of-concepts/Image Processing/FF0.jpg')
+cv2.imwrite('Original image.jpg',img)
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-cv2.imshow('Gray image', gray)
+cv2.imwrite('Gray image.jpg', gray)
 hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-cv2.imshow('HSV image', hsv)
+cv2.imwrite('HSV image.jpg', hsv)
 
 lower_red = np.array([30,150,50])
 upper_red = np.array([255,255,180])
@@ -15,6 +15,8 @@ res = cv2.bitwise_and(img,img, mask= mask)
 
 # Apply edge detection method on the image
 edges = cv2.Canny(gray,50,150,apertureSize = 3)
+
+cv2.imwrite('Canny edges.jpg',edges)
 
 # This returns an array of r and theta values
 lines = cv2.HoughLines(edges,1,np.pi/180, 200)
@@ -57,7 +59,7 @@ if lines.all()!=None:
     # All the changes made in the input image are finally
     # written on a new image houghlines.jpg
 
-    cv2.imshow('houghlines3.jpg',img)
+    cv2.imwrite('houghlines3.jpg',img)
 
 """
 th1 = cv2.threshold(gray,127,255,cv2.THRESH_BINARY)
@@ -73,9 +75,9 @@ thresholded_imagewoblur = cv2.adaptiveThreshold(gray,255,cv2.ADAPTIVE_THRESH_GAU
 thresholded_imagewblur = cv2.adaptiveThreshold(blur,255,cv2.ADAPTIVE_THRESH_GAUSSIAN_C,\
             cv2.THRESH_BINARY,11,2)
 
-cv2.imshow('Adaptive Gaussian Filtering w Blur',thresholded_imagewblur)
-cv2.imshow('Adaptive Gaussian Filtering w/o Blur', thresholded_imagewoblur)
-#cv2.imshow('Thresholded Binary', th1)
+cv2.imwrite('Adaptive Gaussian Filtering w Blur.jpg',thresholded_imagewblur)
+cv2.imwrite('Adaptive Gaussian Filtering w/o Blur.jpg', thresholded_imagewoblur)
+#cv2.imwrite('Thresholded Binary', th1)
 
 
 cv2.waitKey(0)
