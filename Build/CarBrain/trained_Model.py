@@ -1,25 +1,23 @@
-# Step 1: Import the packages
 from keras.models import model_from_json
 import cv2
 import numpy as np
 import os
 
-# Step 2: Load the Model from Json File
+
 json_file = open('./model.json', 'r')
 loaded_model_json = json_file.read()
 json_file.close()
 loaded_model = model_from_json(loaded_model_json)
 
-# Step 3: Load the weights
+
 loaded_model.load_weights("./model.h5")
 print("Loaded model from disk")
 
-# Step 4: Compile the model
 loaded_model.compile(optimizer = 'adam', loss = 'sparse_categorical_crossentropy', metrics = ['accuracy'])
 
 #directory = '/Users/prajwalseth/Desktop/Programming/Desi-Tesla/Build/CarBrain/CNN/all3/test/'
 directory = '/Users/prajwalseth/Desktop/Programming/Desi-Tesla/Build/CarBrain/CNN/all3/test1/'
-# Step 5: load the image you want to test
+
 for filename in os.listdir(directory):
 	image = cv2.imread(str(directory+filename))
 	try:
