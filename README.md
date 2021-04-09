@@ -12,10 +12,6 @@ Contains the functions that allow the car to be able to drive, is used as an uti
 ```Prediction.py``` :
 Contains the code that makes the prediction from the saved model, for a given image captured at a certain point in the path.
 
-# PROJECT REPORT
-
-## DESI TESLA
-
 ```
 Contributors :
 
